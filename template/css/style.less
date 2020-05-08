@@ -1,0 +1,292 @@
+@import 'palette.less';
+@import 'mixins.less';
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 10px;
+
+	background-color: @color3;
+	.bodyFontAttributes('Arial', @color2, 15px);
+
+	a {
+		color: @color3;
+
+		&:hover {
+			color: @color2;
+		}
+	}
+}
+
+.header {
+	position: relative;
+	overflow: hidde;
+	text-align: center;
+	margin: 0 auto;
+	padding: 4em 0;
+	background: @color4;
+}
+
+h1 {
+	.headerFontAttributes('Play', sans-serif; @color2; 2em);
+}
+
+h2 {
+	.headerFontAttributes('Play', sans-serif; @color3; 1.8em);
+}
+
+h3 {
+	.headerFontAttributes('Play', sans-serif; @color3; 1.6em);
+	text-align: center;
+}
+
+h4 {
+	.headerFontAttributes('Play', sans-serif; @color1; 1.4em);
+}
+
+h5 {
+	.headerFontAttributes('Play', sans-serif; @color3; 1.2em);
+}
+
+h6 {
+	.headerFontAttributes('Play', sans-serif; @color3; 1em);
+}
+
+p {
+	font-family: "Quicksand";
+	color: @color3;
+	font-size: 12pt;
+	text-align: justify;
+	line-height: 28px;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+
+nav {
+	//margin: 10px; // zero out to get rid of space
+	padding: 0 10px;
+	position: relative;
+	.gradient(@c_gradLight, @c_gradDark);
+	.border-radius();
+	.drop-shadow();
+	height: 46px;
+
+	ul li {
+		float: left;
+		position: relative;
+		list-style: none;
+	}
+
+	ul li a {
+		color: @color4;
+		display: block;
+		font-size: 18px;
+		line-height: 33px;
+		padding: 6px 12px;
+		margin: 0px 8px;
+		vertical-align: middle;
+		text-decoration: none;
+	}
+
+	ul li a:hover {
+		color: @color1;
+		.gradient(@c_gradDark,
+			@c_gradLight);
+	}
+}
+
+img {
+	width: 500px;
+	height: 400px;
+	.border;
+	.floatright;
+}
+
+table {
+	margin: auto;
+	border: 1px solid;
+	border-color: red;
+	width: 90%;
+	border-collapse: collapse;
+	margin-bottom: 10px;
+
+	td {
+		padding: 5px;
+		border: 1px solid;
+		border-color: red;
+		text-align: center;
+
+		th {
+			padding: 5px;
+			border: 1px solid;
+			border-color: red;
+		}
+	}
+}
+
+tr:nth-of-type(even) {
+	background-color: @lightColor3;
+}
+
+#wrapper {
+	.wrapper(@color4);
+	box-shadow: 5px 5px 5px;
+}
+
+footer {
+	.gradient(@c_gradLight, @c_gradDark);
+	.drop-shadow();
+	padding: 45px 0 20px;
+	font-size: 15px;
+	line-height: 24px;
+	color: @color4;
+}
+
+footer hr {
+	border-top-color: @color3;
+	opacity: 0.5
+}
+
+footer hr.small {
+	margin: 20px 0;
+}
+
+footer h6 {
+	color: @color4;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 5px;
+	letter-spacing: 2px
+}
+
+footer a:hover {
+	color: @color1;
+	text-decoration: none;
+}
+
+.footer-links {
+	padding-left: 0;
+	list-style: none
+}
+
+.footer-links li {
+	display: block
+}
+
+.footer-links a {
+	color: #737373
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+	color: @color1;
+	text-decoration: none;
+}
+
+.footer-links.inline li {
+	display: inline-block
+}
+
+footer .social-icons {
+	text-align: right
+}
+
+footer .social-icons a {
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 6px;
+	margin-right: 0;
+	border-radius: 100%;
+	background-color: @color2;
+}
+
+.copyright-text {
+	margin: 0
+}
+
+.social-icons {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none
+}
+
+.social-icons li {
+	display: inline-block;
+	margin-bottom: 4px
+}
+
+.social-icons li.title {
+	margin-right: 15px;
+	text-transform: uppercase;
+	color: #96a2b2;
+	font-weight: 700;
+	font-size: 13px
+}
+
+.social-icons a {
+	background-color: #eceeef;
+	color: #818a91;
+	font-size: 16px;
+	display: inline-block;
+	line-height: 44px;
+	width: 44px;
+	height: 44px;
+	text-align: center;
+	margin-right: 8px;
+	border-radius: 100%;
+	-webkit-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear
+}
+
+.social-icons a:active,
+.social-icons a:focus,
+.social-icons a:hover {
+	color: #fff;
+	background-color: #29aafe
+}
+
+.social-icons.size-sm a {
+	line-height: 34px;
+	height: 34px;
+	width: 34px;
+	font-size: 14px
+}
+
+.social-icons a.facebook:hover {
+	background-color: #3b5998
+}
+
+.social-icons a.twitter:hover {
+	background-color: #00aced
+}
+
+
+@media (max-width:991px) {
+	.site-footer [class^=col-] {
+		margin-bottom: 30px
+	}
+}
+
+@media (max-width:767px) {
+	footer {
+		padding-bottom: 0
+	}
+
+	footer .copyright-text,
+	footer .social-icons {
+		text-align: center
+	}
+
+	.social-icons li.title {
+		display: block;
+		margin-right: 0;
+		font-weight: 600
+	}
+}
